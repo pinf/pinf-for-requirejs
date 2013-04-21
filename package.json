@@ -1,0 +1,6 @@
+{
+	"name": "pinf-for-requirejs",
+	"version": "0.1.0",
+	"pm": "npm",
+	"publish": true
+}

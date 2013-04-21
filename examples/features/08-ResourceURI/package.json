@@ -1,0 +1,13 @@
+{
+    "main": "./main.js",
+    "mappings": {
+        "pkg": "./sub-package"
+    },
+    "config": {
+        "github.com/sourcemint/bundler-js/0/-meta/config/0": {
+            "resources": [
+                "./*.txt"
+            ]
+        }
+    }
+}
