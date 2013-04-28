@@ -25,10 +25,26 @@ Usage
 *TODO*
 
 
-Development
------------
+Test & Development
+==================
+
+Requirements:
+
+  * [NodeJS](http://nodejs.org/)
+
+Run tests:
 
     make test
+
+Launch development workspace:
+
+    make run-dev
+    open http://localhost:8080/
+
+Build
+-----
+
+    make build
 
 
 License

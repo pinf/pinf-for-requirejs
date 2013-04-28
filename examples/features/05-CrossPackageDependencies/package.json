@@ -1,6 +1,0 @@
-{
-    "main": "./main.js",
-    "mappings": {
-        "helpers": "./packages/packageA"
-    }
-}

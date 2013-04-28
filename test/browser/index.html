@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="mocha/mocha.css">
+    <script src="mocha/mocha.js" type="text/javascript" charset="utf-8"></script>
+    <script src="chai/chai.js" type="text/javascript" charset="utf-8"></script>
+    <script src="pinf-loader-js/loader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="pinf-loader-js/workspace/www/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="pinf-loader-js/workspace/www/q.js" type="text/javascript" charset="utf-8"></script>
+    <script src="require.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div id="mocha"></div>
+    <script type="text/javascript">
+        var ASSERT = chai.assert;
+        mocha.setup({
+            ui: "bdd",
+            ignoreLeaks: true
+        });
+
+        var logBuffer = {};
+        var featuresPath = "pinf-loader-js/features";
+
+        function logToBuffer(moduleObj, arguments) {
+            var uri = moduleObj.require.sandbox.id.substring(2) + moduleObj.id;
+            if (uri.substring(0, featuresPath.length) === featuresPath) {
+                uri = uri.substring(featuresPath.length);
+            }
+            logBuffer[uri] = arguments[0];
+        }
+
+        requirejs.config({
+            paths: {
+            	pinf: "pinf-for-requirejs/pinf",
+                feature: featuresPath
+            },
+            pinf: {
+                onInitModule: function(moduleInterface, moduleObj) {
+                    moduleObj.require.API = {
+                        Q: Q,
+                        FETCH: function(uri, callback) {
+                            return $.get(uri).done(function(data, textStatus, jqXHR) {
+                                return callback(null, data);
+                            }).fail(function(jqXHR, textStatus, errorThrown) {
+                                return callback(new Error((errorThrown && errorThrown.message) || textStatus));
+                            });
+                        }
+                    };
+                    moduleInterface.log = function() {
+                        logToBuffer(moduleObj, arguments);
+                    };
+                    moduleInterface.logForModule = function(moduleObj, arguments) {
+                        logToBuffer(moduleObj, arguments);
+                    };
+                }
+            }
+        });
+
+        requirejs([
+            "./loader-bundles"
+        ], function() {
+            mocha.run();
+        });
+    </script>    
+</body>
+</html>
