@@ -18,7 +18,8 @@ define(function() {
 			'11-CrossDomain',
 			'12-Environment',
 			'13-AssignExports',
-			'14-NamedBundle'
+			'14-NamedBundle',
+			'15-GlobalDependencyFallback'
 			// @inject </features>
 		];
 	}
@@ -58,7 +59,8 @@ define(function() {
 			    "tps://raw.github.com/pinf/pinf-loader-js/master/features/11-CrossDomain/CrossDomainBundle/main.js": "Hello from 11-CrossDomain/CrossDomainBundle!",
 			    "/12-Environment/main.js": "Hello from 12-Environment!",
 			    "/13-AssignExports/main.js": "Hello from 13-AssignExports!",
-			    "/14-NamedBundle/main.js": "Hello from 14-NamedBundle!"
+			    "/14-NamedBundle/main.js": "Hello from 14-NamedBundle!",
+			    "/15-GlobalDependencyFallbackpackageA/logger.js": "Hello from 15-GlobalDependencyFallback!"
 			});
 		});
 
