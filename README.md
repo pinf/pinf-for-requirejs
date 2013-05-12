@@ -1,6 +1,6 @@
 *Status: DEV*
 
-PINF JavaScript Loader for Requirejs
+PINF JavaScript Loader for RequireJS
 ====================================
 
 A [RequireJS](http://requirejs.org/) [plugin](http://requirejs.org/docs/plugins.html) for
