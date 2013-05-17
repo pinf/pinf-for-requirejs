@@ -19,7 +19,8 @@ define(function() {
 			'12-Environment',
 			'13-AssignExports',
 			'14-NamedBundle',
-			'15-GlobalDependencyFallback'
+			'15-GlobalDependencyFallback',
+			'16-MemoizedDynamic'
 			// @inject </features>
 		];
 	}
@@ -60,7 +61,9 @@ define(function() {
 			    "/12-Environment/main.js": "Hello from 12-Environment!",
 			    "/13-AssignExports/main.js": "Hello from 13-AssignExports!",
 			    "/14-NamedBundle/main.js": "Hello from 14-NamedBundle!",
-			    "/15-GlobalDependencyFallbackpackageA/logger.js": "Hello from 15-GlobalDependencyFallback!"
+			    "/15-GlobalDependencyFallbackpackageA/logger.js": "Hello from 15-GlobalDependencyFallback!",
+			    "/16-MemoizedDynamic/main.js": "Hello from 16-MemoizedDynamic!",
+      			"/16-MemoizedDynamic/Dynamic.js": "Hello from 16-MemoizedDynamic/Dynamic!"
 			});
 		});
 

@@ -4,7 +4,7 @@
     "pm": "npm",
     "publish": true,
     "dependencies": {
-        "pinf-loader-js": "~0.4.4"
+        "pinf-loader-js": "~0.4.5"
     },
     "devDependencies": {
         "fs-extra": "~0.6.0",
