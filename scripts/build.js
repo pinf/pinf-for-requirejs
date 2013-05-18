@@ -28,9 +28,14 @@ function injectLoader(callback) {
 
 	var code = FS.readFileSync(path).toString();
 
+	var loader = FS.readFileSync(PATH.join(ROOT_PATH, "node_modules/pinf-loader-js/loader.stripped.js")).toString().split("\n");
+	var descriptor = JSON.parse(FS.readFileSync(PATH.join(ROOT_PATH, "node_modules/pinf-loader-js/package.json")));
 
-//console.log("pluginCode", code);
+	loader.unshift("// @source " + descriptor.uid + " @ " + descriptor.version);
 
+	code = code.replace(/(\/\/ @inject <loader>)\n[\s\S]*?(\n[^\n]+)(\/\/ @inject <\/loader>\n)/, "$1$2" + loader.join("$2") + "$2$3");
+
+	FS.writeFileSync(path, code);
 
 	return callback(null);	
 }
@@ -47,7 +52,7 @@ function injectFeatureList(callback) {
 		return filename.replace(/\.js$/, "");
 	});
 
-	code = code.replace(/(\/\/ @inject <features>)\n[\s\S]*?(\n\s+)(\/\/ @inject <\/features>\n)/, "$1$2'" + features.join("',$2'") + "'$2$3");
+	code = code.replace(/(\/\/ @inject <features>)\n[\s\S]*?(\n[^\n]+)(\/\/ @inject <\/features>\n)/, "$1$2'" + features.join("',$2'") + "'$2$3");
 
 	FS.writeFileSync(path, code);
 
