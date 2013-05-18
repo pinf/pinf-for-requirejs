@@ -24,6 +24,8 @@
             var uri = moduleObj.require.sandbox.id.substring(2) + moduleObj.id;
             if (uri.substring(0, featuresPath.length) === featuresPath) {
                 uri = uri.substring(featuresPath.length);
+            } else {
+                uri = moduleObj.require.sandbox.id + moduleObj.id;
             }
             logBuffer[uri] = arguments[0];
         }

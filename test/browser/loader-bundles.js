@@ -42,7 +42,6 @@ define(function() {
 		});
 
 		it("verify output", function() {
-
 			ASSERT.deepEqual(logBuffer, {
 			    "/01-HelloWorld/main.js": "Hello from 01-HelloWorld!",
 			    "/02-ReturnExports/main.js": "Hello from 02-ReturnExports!",
@@ -57,7 +56,7 @@ define(function() {
 			    "/10-Sandbox/main.js": "Hello from 10-Sandbox!",
 			    "/10-Sandbox/SandboxedExtraBundle/main.js": "Hello from 10-Sandbox/SandboxedExtraBundle!",
 			    "/11-CrossDomain/main.js": "Hello from 11-CrossDomain!",
-			    "tps://raw.github.com/pinf/pinf-loader-js/master/features/11-CrossDomain/CrossDomainBundle/main.js": "Hello from 11-CrossDomain/CrossDomainBundle!",
+			    "https://raw.github.com/pinf/pinf-loader-js/master/features/11-CrossDomain/CrossDomainBundle/main.js": "Hello from 11-CrossDomain/CrossDomainBundle!",
 			    "/12-Environment/main.js": "Hello from 12-Environment!",
 			    "/13-AssignExports/main.js": "Hello from 13-AssignExports!",
 			    "/14-NamedBundle/main.js": "Hello from 14-NamedBundle!",
