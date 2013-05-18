@@ -22,7 +22,31 @@ Install
 Usage
 -----
 
-*TODO*
+`http://localhost/index.html`
+
+    <script src="require.js"></script>
+    <script>
+        requirejs.config({
+            paths: {
+                pinf: "pinf.require"
+            }
+        });
+        require([
+            "pinf!bundle"
+        ], function(sandbox) {
+            sandbox.main();
+        });
+    </script>
+
+`http://localhost/bundle.js`
+
+    PINF.bundle("", function(require) {
+        require.memoize("/main.js", function(require, exports, module) {
+            exports.main = function(options) {
+                console.log("HelloWorld!");
+            }
+        });
+    });
 
 
 Test & Development

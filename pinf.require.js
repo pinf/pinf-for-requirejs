@@ -418,8 +418,6 @@ define({
             // @inject </loader>
         }).call(window);
 
-        $.pinf = window.PINF;
-
         return window.PINF.sandbox(require.toUrl(name) + ".js", config.pinf || {}, onload, onload.error);
     }
 });

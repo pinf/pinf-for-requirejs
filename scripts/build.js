@@ -24,7 +24,7 @@ exports.build = function(callback) {
 
 function injectLoader(callback) {
 
-	var path = PATH.join(ROOT_PATH, "pinf.js");
+	var path = PATH.join(ROOT_PATH, "pinf.require.js");
 
 	var code = FS.readFileSync(path).toString();
 

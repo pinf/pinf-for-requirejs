@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../../test/browser/require.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        requirejs.config({
+            paths: {
+                pinf: "../../pinf.require"
+            }
+        });
+        require([
+            "pinf!bundle"
+        ], function(sandbox) {
+            sandbox.main();
+        });
+    </script>
+</body>
+</html>
