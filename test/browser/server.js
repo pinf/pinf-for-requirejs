@@ -11,6 +11,8 @@ exports.main = function(callback) {
 
     mountStaticDir(app, /^\/mocha\/(.*)/, PATH.join(__dirname, "../../node_modules/mocha"));
     mountStaticDir(app, /^\/chai\/(.*)/, PATH.join(__dirname, "../../node_modules/chai"));
+    mountStaticDir(app, /^\/q\/(.*)/, PATH.join(__dirname, "../../node_modules/q"));
+    mountStaticDir(app, /^\/jquery\/(.*)/, PATH.join(__dirname, "../../node_modules/jquery/dist"));
     mountStaticDir(app, /^\/pinf-loader-js\/(.*)/, PATH.join(__dirname, "../../node_modules/pinf-loader-js"));
     mountStaticDir(app, /^\/pinf-for-requirejs\/(.*)/, PATH.join(__dirname, "../.."));
 

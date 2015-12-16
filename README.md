@@ -1,4 +1,5 @@
 *Status: DEV*
+[![Circle CI](https://circleci.com/gh/pinf/pinf-for-requirejs.svg?style=svg)](https://circleci.com/gh/pinf/pinf-for-requirejs)
 
 PINF JavaScript Loader for RequireJS
 ====================================
@@ -58,17 +59,17 @@ Requirements:
 
 Run tests:
 
-    make test
+    npm test
 
 Launch development workspace:
 
-    make run-dev
+    npm run dev
     open http://localhost:8080/
 
 Build
 -----
 
-    make build
+    npm run build
 
 
 License
