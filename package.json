@@ -4,10 +4,10 @@
   "pm": "npm",
   "publish": true,
   "dependencies": {
-    "jquery": "^2.1.4",
     "pinf-loader-js": "0.4.x"
   },
   "devDependencies": {
+    "jquery": "^2.1.4",
     "fs-extra": "~0.6.0",
     "mocha": "~1.9.0",
     "grunt": "~0.4.1",
